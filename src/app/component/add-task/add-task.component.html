@@ -1,0 +1,28 @@
+<div class="container">
+    <form #addNewTaskForm="ngForm" (ngSubmit)="addNewTask(addNewTaskForm, departmentSelect)">
+      <h2 class="form-signin-heading">Add New Task</h2>
+        <label for="name" class="sr-only">Username</label>
+        <input type="text" id="name" name="name" [(ngModel)]="data.name" 
+          class="form-control" placeholder="Name" required>
+        <br/>
+        <label for="description" class="sr-only">Name</label>
+        <input type="text" id="description" name="description" [(ngModel)]="data.description" 
+          class="form-control" placeholder="Description" required>
+        <br/>
+
+        <mat-form-field>
+            <mat-label>Employee</mat-label>
+            <mat-select #departmentSelect>
+              <mat-option *ngFor="let employee of employeeItems" [value]="employee.id">
+                {{employee.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field> 
+        <br/>
+
+        <button class="btn btn-lg btn-primary" type="submit" [disabled]="!addNewTaskForm.valid">Add</button>
+    </form>
+  </div>
+
+  
+

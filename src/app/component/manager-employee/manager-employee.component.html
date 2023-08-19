@@ -1,0 +1,23 @@
+<button class="btn btn-primary" style="margin: 15px;" (click)="goToAddEmployeeScreen()">Add Employee</button>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">BirthDay</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employeeItems">
+            <td>{{employee.name}}</td>
+            <td>{{employee.phoneNumber}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.birthday}}</td>
+            <td><button (click)="removeEmployee(employee.id , employee.departmentId)">Remove</button></td>
+        </tr>
+    </tbody>
+  </table>

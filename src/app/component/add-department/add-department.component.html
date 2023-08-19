@@ -1,0 +1,25 @@
+<div class="container">
+    <form #addNewDepartmentForm="ngForm" (ngSubmit)="addNewDeparment(addNewDepartmentForm , managerSelect)">
+      <h2 class="form-signin-heading">Add New Department</h2>
+
+        <mat-form-field>
+            <mat-label>Managers</mat-label>
+            <mat-select #managerSelect>
+              <mat-option *ngFor="let manager of managerItems" [value]="manager.id">
+                {{manager.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field> 
+
+        <br/>
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="data.name" 
+          class="form-control" placeholder="Name" required>
+        <br/>
+        <button class="btn btn-lg btn-primary" type="submit" [disabled]="!addNewDepartmentForm.valid">Add</button>
+    </form>
+  </div>
+
+  
+
+

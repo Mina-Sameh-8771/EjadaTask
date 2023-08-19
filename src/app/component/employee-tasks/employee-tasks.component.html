@@ -1,0 +1,22 @@
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Task Name</th>
+        <th scope="col">Task Descririon</th>
+        <th scope="col">Status</th>
+        <th scope="col">SubmissionDate</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasksItems">
+            <td>{{task.name}}</td>
+            <td>{{task.description}}</td>
+            <td>{{ getTaskStatusDescription(task.statusId)}}</td>
+            <td>{{task.submissionDate}}</td>
+            <td><button (click)="complateTask(task.id)" [disabled]="isTaskFinished(task.statusId)">Complate</button></td>
+        </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,29 @@
+<div class="container">
+    <form #addNewManagerForm="ngForm" (ngSubmit)="addNewManager(addNewManagerForm)">
+      <h2 class="form-signin-heading">Add New Manager</h2>
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="data.username" 
+          class="form-control" placeholder="User Name" required>
+        <br/>
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="data.name" 
+          class="form-control" placeholder="Name" required>
+        <br/>
+        <label for="email" class="sr-only">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="data.email" 
+          class="form-control" placeholder="Email" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+        <br/>
+        <label for="birthday" class="sr-only">Birthday</label>
+        <input type="date" id="birthday" name="birthday" [(ngModel)]="data.birthday" 
+          class="form-control" placeholder="Birthday" required>
+        <br/>
+        <label for="phoneNumber" class="sr-only">Phone Number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="data.phoneNumber" 
+          class="form-control" placeholder="Phone Number" required>
+        <br/>
+        <button class="btn btn-lg btn-primary" type="submit" [disabled]="!addNewManagerForm.valid">Add</button>
+    </form>
+  </div>
+
+  
+
